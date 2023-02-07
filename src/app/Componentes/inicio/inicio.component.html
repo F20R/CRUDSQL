@@ -1,0 +1,30 @@
+<div>
+
+  <p>inicio works!</p>
+
+  <button type="button" routerLink="/add">Agregar</button>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Imagen</th>
+      <th>Editar</th>
+      <th>Eliminar</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let usuario of ListarUsuario">
+      <th>{{usuario.id}}</th>
+      <td>{{usuario.nombre}}</td>
+      <td><img src="{{usuario.imagen}}" alt="" width="50px" height="50px"></td>
+      <td><button type="button" (click)="modificar(usuario.id || '')">Editar</button></td>
+      <td><button type="button" (click)="eliminar(usuario.id || '')">Eliminar</button></td>
+    </tr>
+    </tbody>
+
+  </table>
+
+</div>
+
